@@ -29,13 +29,27 @@ fun registraVoto(name: String, age: Int) {
     println("Voto de ${name} realizado com sucesso!")
 }
 
+// Aula 6
+data class Person(val name: String?)
+
+// Aula 6
+fun fail(message : String): Nothing {
+    throw IllegalArgumentException(message)
+}
+
 fun main() {
     //calculaDivisao(1,0)
     //println(calculaDivisaoMelhorada(4, 2))
 
-    var quantidadeVotos : Int = 0
-        quantidadeVotos += try { registraVoto("Joao", 30); 1; } catch (e: IllegalVoterException) { 0 };
-        quantidadeVotos += try { registraVoto("Marcos", 10); 1; } catch (e: IllegalVoterException) { 0 };
-        quantidadeVotos += try { registraVoto("Renan", 50); 1; } catch (e: IllegalVoterException) { 0 };
-    println(quantidadeVotos)
+    // Aula 5
+    // var quantidadeVotos : Int = 0
+    //     quantidadeVotos += try { registraVoto("Joao", 30); 1; } catch (e: IllegalVoterException) { 0 };
+    //     quantidadeVotos += try { registraVoto("Marcos", 10); 1; } catch (e: IllegalVoterException) { 0 };
+    //     quantidadeVotos += try { registraVoto("Renan", 50); 1; } catch (e: IllegalVoterException) { 0 };
+    // println(quantidadeVotos)
+
+    // Aula 6
+    val person = Person(null)
+    val s = person.name ?: fail("Nome requerido")
+    println(s)
 }
